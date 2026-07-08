@@ -1,3 +1,5 @@
+"use client";
+
 export function AboutSection() {
   return (
     <section
@@ -9,7 +11,6 @@ export function AboutSection() {
     >
       <div className="wrap">
         <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12 md:gap-16 items-start">
-          {/* Photo — constrained, not hero-sized */}
           <img
             src="/images/Egert V.jpg"
             alt="Egert Väinaste"
@@ -22,7 +23,6 @@ export function AboutSection() {
             }}
           />
 
-          {/* Narrative */}
           <div>
             <h2
               style={{
@@ -35,9 +35,7 @@ export function AboutSection() {
                 marginBottom: "28px",
               }}
             >
-              A product manager
-              <br />
-              who learned to ship.
+              Egert Väinaste
             </h2>
 
             <div
@@ -56,10 +54,10 @@ export function AboutSection() {
                   color: "var(--muted)",
                 }}
               >
-                For years I wrote specs and handed them to engineering teams.
-                Then Claude Code arrived and I could build the thing myself —
-                not prototypes, not demos, but production systems with real
-                databases, real auth, real payment flows, and real users.
+                Product Manager by day, AI builder the rest of the time. I use
+                Claude Code to ship full-stack production applications —
+                not prototypes, not demos, but systems with real databases,
+                real auth, real payment flows, and real users.
               </p>
 
               <p
@@ -70,13 +68,12 @@ export function AboutSection() {
                   color: "var(--muted)",
                 }}
               >
-                In six months I shipped 45 applications. A barcode-scanning
-                grocery price tracker that matches products across three
-                retail chains with a deterministic zero-AI matcher. An
-                Estonian &quot;Grammarly&quot; where every LLM suggestion is
-                re-validated by a rule-based NLP engine. A multi-tenant DJ
-                request platform with Stripe subscriptions and YouTube API
-                writes. A production booking system for a real tennis club —
+                45+ apps in six months. Barcode-scanning PWAs with
+                deterministic product matching across retail chains.
+                An Estonian NLP tool where every LLM suggestion is
+                re-validated by a rule-based engine. Multi-tenant SaaS
+                with Stripe subscriptions and YouTube API writes. A
+                production booking system for a real tennis club —
                 deployed and handed to the client.
               </p>
 
@@ -88,14 +85,90 @@ export function AboutSection() {
                   color: "var(--muted)",
                 }}
               >
-                These aren&apos;t weekend toys. They have Neon databases,
-                Clerk auth, Stripe payments, Cloudflare R2 storage, GitHub
-                Actions crons, push notifications, Telegram bots, and
-                Playwright test suites. I wire the backends, connect the
-                APIs, set up the pipelines, and deploy to Vercel — all
-                through Claude Code, all at a pace that would take a
-                traditional team months.
+                Stack: Next.js, React, TypeScript, Tailwind CSS, Neon
+                PostgreSQL, Drizzle ORM, Clerk, Stripe, Cloudflare R2,
+                GitHub Actions, Web Push, Telegram bots, Resend,
+                Playwright, Vercel. Claude AI powers the intelligence layer.
               </p>
+
+              {/* Value prop for SMB */}
+              <div
+                style={{
+                  marginTop: "8px",
+                  paddingTop: "20px",
+                  borderTop: "1px solid var(--border-subtle)",
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "16px",
+                    fontWeight: 700,
+                    color: "var(--ink)",
+                    marginBottom: "10px",
+                  }}
+                >
+                  Looking for a builder?
+                </p>
+                <p
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "14.5px",
+                    lineHeight: 1.65,
+                    color: "var(--muted)",
+                  }}
+                >
+                  I build production web apps for small businesses and
+                  startups — booking systems, customer portals, internal
+                  tools, data dashboards, landing pages with real backends.
+                  One person, fast delivery, no agency overhead. If you have
+                  a problem that software can solve, let&apos;s talk.
+                </p>
+              </div>
+
+              {/* Social links */}
+              <div className="flex gap-3 mt-2">
+                <a
+                  href="https://www.linkedin.com/in/egert-vainaste/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="no-underline transition-colors duration-200"
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    color: "var(--primary)",
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.color = "var(--primary-hover)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.color = "var(--primary)")
+                  }
+                >
+                  LinkedIn →
+                </a>
+                <a
+                  href="https://github.com/keeltekool"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="no-underline transition-colors duration-200"
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    color: "var(--primary)",
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.color = "var(--primary-hover)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.color = "var(--primary)")
+                  }
+                >
+                  GitHub →
+                </a>
+              </div>
             </div>
           </div>
         </div>

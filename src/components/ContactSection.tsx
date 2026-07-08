@@ -48,7 +48,7 @@ export function ContactSection() {
               }}
             >
               <a
-                href="mailto:egert@egertv.com"
+                href="mailto:egertv@gmail.com"
                 className="no-underline transition-colors duration-200"
                 style={{
                   fontFamily: "var(--font-body)",
@@ -63,7 +63,7 @@ export function ContactSection() {
                   (e.currentTarget.style.color = "var(--ink)")
                 }
               >
-                egert@egertv.com
+                egertv@gmail.com
               </a>
               <span
                 style={{

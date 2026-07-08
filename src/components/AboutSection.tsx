@@ -57,7 +57,7 @@ export function AboutSection() {
                 lineHeight: 1.3,
               }}
             >
-              Hi! I&apos;m Egert Väinaste – Product Manager and AI builder
+              Hi! I&apos;m Egert Väinaste – Product Manager &amp; AI builder
             </h3>
 
             <p
@@ -69,10 +69,9 @@ export function AboutSection() {
                 marginBottom: "20px",
               }}
             >
-              By day, I lead API product development at SK ID Solutions – building
-              Europe&apos;s next-generation e-sealing infrastructure based on the CSC
-              standard. By night (and weekends), I ship AI-powered products at an
-              unreasonable pace.
+              Product Manager by day, AI builder by night (and weekends). I ship
+              production applications at an unreasonable pace using Claude Code as
+              my development partner.
             </p>
 
             <p
@@ -84,10 +83,10 @@ export function AboutSection() {
                 marginBottom: "20px",
               }}
             >
-              In the past year, I&apos;ve built 25+ production applications using Claude
-              Code as my development partner – from OAuth 2.0 API platforms and
-              multi-tenant SaaS tools to mobile apps, data scrapers, and AI-powered
-              job application systems.
+              In six months, I&apos;ve built 45+ production applications – from
+              barcode-scanning PWAs and multi-tenant SaaS platforms to dual-layer
+              NLP engines, autonomous scraping pipelines, and production booking
+              systems for real clients.
             </p>
 
             <p
@@ -100,8 +99,8 @@ export function AboutSection() {
               }}
             >
               My stack: Next.js, React, TypeScript, Tailwind CSS, Neon PostgreSQL,
-              Clerk, Stripe, Vercel – with Claude AI powering the intelligence layer.
-              Every project goes from zero to deployed in days, not months.
+              Clerk, Stripe, Cloudflare R2, Vercel – with Claude AI powering the
+              intelligence layer. Real databases, real auth, real payments, real users.
             </p>
 
             <p

@@ -32,7 +32,7 @@ export function HeroSection() {
             marginBottom: "32px",
           }}
         >
-          I build AI-powered products. From idea to production, fast.
+          45 production apps in six months. All built with Claude Code.
         </h1>
 
         {/* Subtitle */}
@@ -45,7 +45,7 @@ export function HeroSection() {
             marginBottom: "48px",
           }}
         >
-          Product Manager at SK ID Solutions. 25+ projects built with Claude Code.
+          Product Manager by trade. Full-stack builder with AI.
         </p>
 
         {/* Buttons */}
@@ -105,7 +105,7 @@ export function HeroSection() {
                 lineHeight: 1.1,
               }}
             >
-              25+
+              45+
             </p>
             <p
               style={{
@@ -118,7 +118,7 @@ export function HeroSection() {
                 marginTop: "8px",
               }}
             >
-              PROJECTS SHIPPED
+              APPS SHIPPED
             </p>
           </div>
           <div>
@@ -131,7 +131,7 @@ export function HeroSection() {
                 lineHeight: 1.1,
               }}
             >
-              10+
+              20+
             </p>
             <p
               style={{

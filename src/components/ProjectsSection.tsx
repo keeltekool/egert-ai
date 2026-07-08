@@ -1,59 +1,59 @@
 const projects = [
   {
-    title: "Alkoholiks API",
+    title: "Hinnavaht",
     description:
-      "Production-grade REST API with OAuth 2.0, OpenAPI 3.1, Swagger UI, rate limiting, and developer dashboard. 1,871 products across 5 stores.",
-    icon: "🔗",
-    url: "https://alkoholiks-api.vercel.app",
+      "Barcode-scanning grocery price tracker across three Estonian retail chains. Deterministic zero-AI product matching, GitHub Actions cron, push + email digests on drops ≥25%.",
+    icon: "📊",
+    url: "https://hinnavaht.vercel.app",
   },
   {
-    title: "PriceHNTR",
+    title: "Keeletärk",
     description:
-      "Mobile drink price comparison app. Browse cheapest drinks across 5 Estonian retail chains with instant search and filters.",
-    icon: "💰",
-    url: "https://price-hntr.vercel.app",
+      "Estonian \"Grammarly\" with dual-layer AI + rule-engine validation. Every LLM suggestion re-validated by estnltk before display. Animated quality scores, one-click rewrite.",
+    icon: "✍️",
+    url: "https://keeletark.vercel.app",
   },
   {
-    title: "Rental Business Kit",
+    title: "SongDrop Pro",
     description:
-      "Multi-tenant booking platform with service carousel, availability calendar, Stripe payments, and full admin console with 9 management sections.",
-    icon: "📅",
-    url: "https://rental-business-kit.vercel.app/t/mets",
-  },
-  {
-    title: "ApplyKit",
-    description:
-      "Full-stack AI job application platform. CV tailoring, cover letters, interview prep with AI coach, Skills Vault, and Career Coach.",
-    icon: "📄",
-    url: "https://cv-tailor-plus.vercel.app",
-  },
-  {
-    title: "GymPal",
-    description:
-      "Fat-loss strength training PWA with tier-based exercise rotation, live timer, vault for favorites, and calendar history.",
-    icon: "💪",
-    url: "https://gym-app-eight-phi.vercel.app",
-  },
-  {
-    title: "HOOG",
-    description:
-      "Harjumaa event aggregator – all cultural, sport, and community events across 16 Estonian towns from 4 data sources.",
-    icon: "🎭",
-    url: "https://event-radar-six.vercel.app",
-  },
-  {
-    title: "CrateDig",
-    description:
-      "Music discovery for DJs. Upload your library, roll the dice, let YouTube Music find tracks seeded by songs you love.",
+      "Multi-tenant SaaS for DJs. Stripe subscriptions, YouTube API playlist writes, signed-state OAuth, QR-driven guest requests. Per-DJ data isolation.",
     icon: "🎵",
-    url: "https://crate-dig-two.vercel.app",
+    url: "https://songdrop-app.vercel.app",
   },
   {
-    title: "Loop Control Center",
+    title: "Saku Tenniseklubi",
     description:
-      "Dashboard for autonomous Claude Code loops – recurring AI tasks with toggle, monitoring, run history, and success tracking.",
-    icon: "🔄",
-    url: "https://loop-control-center.vercel.app",
+      "Production booking system for a real Estonian tennis club. Drag-select/move/resize grid, 6 CMS editors, DST-safe timezone engine, 71 tests. Client work — deployed and handed over.",
+    icon: "🎾",
+    url: "https://saku-tennis-revamp.vercel.app",
+  },
+  {
+    title: "HankeRadar",
+    description:
+      "AI-powered construction tender matching. Scrapes two portals every 2 hours, Haiku scores listings 1–10. Score ≥7 triggers instant Telegram + email alerts.",
+    icon: "🔍",
+    url: "https://hankeradar-alpha.vercel.app",
+  },
+  {
+    title: "Mindloop",
+    description:
+      "Voice-to-second-brain. Press the iPhone Action Button, talk — iOS Shortcut POSTs into Neon. Weekly Claude Code synthesis surfaces themes on a knowledge-graph dashboard.",
+    icon: "🧠",
+    url: "https://mindloop-henna-omega.vercel.app/preview",
+  },
+  {
+    title: "Keepr",
+    description:
+      "Barcode-scanning grocery memory. Scan at the shelf, past-you answers in ~300ms. Rating via push notification action buttons or signed email links. Shared commons catalog.",
+    icon: "📱",
+    url: "https://keepr-psi.vercel.app",
+  },
+  {
+    title: "Poland Travel Companion",
+    description:
+      "12-day family road trip PWA. MapLibre map with live route split, 85 verified discoveries, login-free shared notes across phones, toggleable Tesla Supercharger layer.",
+    icon: "🗺️",
+    url: "https://travel-assist-poland.vercel.app",
   },
 ];
 
@@ -86,7 +86,7 @@ export function ProjectsSection() {
             marginBottom: "64px",
           }}
         >
-          A selection of production apps, all built with AI
+          Eight of forty-five — all live, all in production
         </p>
 
         {/* 2x2 grid like original services */}
@@ -164,7 +164,7 @@ export function ProjectsSection() {
               color: "var(--color-copper)",
             }}
           >
-            VIEW ALL 25+ PROJECTS →
+            VIEW ALL 45+ PROJECTS →
           </a>
         </div>
       </div>

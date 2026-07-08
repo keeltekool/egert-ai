@@ -1,170 +1,266 @@
-const projects = [
+"use client";
+
+const featured = [
   {
-    title: "Alkoholiks API",
-    description:
-      "Production-grade REST API with OAuth 2.0, OpenAPI 3.1, Swagger UI, rate limiting, and developer dashboard. 1,871 products across 5 stores.",
-    icon: "🔗",
-    url: "https://alkoholiks-api.vercel.app",
+    title: "Hinnavaht",
+    oneLiner: "Barcode-scanning grocery price tracker across three Estonian retail chains.",
+    detail:
+      "Scan a product, follow its price across Selver, Rimi, and Barbora. A deterministic zero-AI matcher links products by brand + unit-normalized size — a 28-case frozen golden set guards accuracy. GitHub Actions polls twice daily; push + email digests fire only on drops ≥25%. 60+ automated assertions including a 33-step Playwright click-through suite.",
+    tags: ["Next.js", "Neon", "Web Push", "GitHub Actions", "Playwright"],
+    url: "https://hinnavaht.vercel.app",
   },
   {
-    title: "PriceHNTR",
-    description:
-      "Mobile drink price comparison app. Browse cheapest drinks across 5 Estonian retail chains with instant search and filters.",
-    icon: "💰",
-    url: "https://price-hntr.vercel.app",
+    title: "Keeletärk",
+    oneLiner: "Estonian \"Grammarly\" with dual-layer AI + rule-engine validation.",
+    detail:
+      "estnltk flags deterministic grammar errors as ground truth. Claude Opus proposes naturalness fixes — and every LLM suggestion is re-validated through the rule engine before display. Red errors, blue suggestions, animated quality scores, pick-and-choose fixes, one-click full rewrite in four styles, English→Estonian translation.",
+    tags: ["Claude API", "estnltk MCP", "Clerk", "Neon"],
+    url: "https://keeletark.vercel.app",
   },
   {
-    title: "Rental Business Kit",
-    description:
-      "Multi-tenant booking platform with service carousel, availability calendar, Stripe payments, and full admin console with 9 management sections.",
-    icon: "📅",
-    url: "https://rental-business-kit.vercel.app/t/mets",
+    title: "SongDrop Pro",
+    oneLiner: "Multi-tenant SaaS for DJs — QR requests straight into YouTube playlists.",
+    detail:
+      "Self-serve onboarding: claim a slug, connect YouTube via signed-state OAuth, set avatar and accent color. Guests scan a QR, search YouTube Music, tap Request — the track drops into the DJ's playlist via the YouTube Data API. Stripe subscriptions at €12/mo with 14-day trial. Per-DJ data isolation, FastAPI search backend on Render.",
+    tags: ["Stripe", "OAuth 2.0", "YouTube API", "FastAPI", "Clerk"],
+    url: "https://songdrop-app.vercel.app",
+  },
+];
+
+const others = [
+  {
+    title: "Saku Tenniseklubi",
+    desc: "Production booking system for a real Estonian tennis club. Drag-select/move/resize grid, recurring series, 6 CMS editors, DST-safe timezone engine, 71 tests. Client work — deployed and handed over.",
+    url: "https://saku-tennis-revamp.vercel.app",
   },
   {
-    title: "ApplyKit",
-    description:
-      "Full-stack AI job application platform. CV tailoring, cover letters, interview prep with AI coach, Skills Vault, and Career Coach.",
-    icon: "📄",
-    url: "https://cv-tailor-plus.vercel.app",
+    title: "HankeRadar",
+    desc: "AI-powered construction tender matching. Scrapes two portals every 2 hours, Haiku scores listings 1–10 against company profiles. Score ≥7 triggers instant Telegram + email alerts.",
+    url: "https://hankeradar-alpha.vercel.app",
   },
   {
-    title: "GymPal",
-    description:
-      "Fat-loss strength training PWA with tier-based exercise rotation, live timer, vault for favorites, and calendar history.",
-    icon: "💪",
-    url: "https://gym-app-eight-phi.vercel.app",
+    title: "Mindloop",
+    desc: "Voice-to-second-brain. Press the iPhone Action Button, talk — an iOS Shortcut POSTs into Neon. Weekly Claude Code synthesis surfaces themes and recurring loops on a knowledge-graph dashboard.",
+    url: "https://mindloop-henna-omega.vercel.app/preview",
   },
   {
-    title: "HOOG",
-    description:
-      "Harjumaa event aggregator – all cultural, sport, and community events across 16 Estonian towns from 4 data sources.",
-    icon: "🎭",
-    url: "https://event-radar-six.vercel.app",
+    title: "Keepr",
+    desc: "Barcode-scanning grocery memory. Scan at the shelf, past-you answers in ~300ms. Rating happens later via push notification action buttons or signed email links. Shared commons catalog.",
+    url: "https://keepr-psi.vercel.app",
   },
   {
-    title: "CrateDig",
-    description:
-      "Music discovery for DJs. Upload your library, roll the dice, let YouTube Music find tracks seeded by songs you love.",
-    icon: "🎵",
-    url: "https://crate-dig-two.vercel.app",
-  },
-  {
-    title: "Loop Control Center",
-    description:
-      "Dashboard for autonomous Claude Code loops – recurring AI tasks with toggle, monitoring, run history, and success tracking.",
-    icon: "🔄",
-    url: "https://loop-control-center.vercel.app",
+    title: "Poland Travel Companion",
+    desc: "12-day family road trip PWA. MapLibre map with live route split, 85 verified discoveries, login-free shared notes across phones, toggleable Tesla Supercharger layer.",
+    url: "https://travel-assist-poland.vercel.app",
   },
 ];
 
 export function ProjectsSection() {
   return (
     <section
-      id="projects"
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-bg-white)" }}
+      id="work"
+      style={{
+        backgroundColor: "var(--surface)",
+        padding: "120px 0",
+      }}
     >
-      <div className="container-main">
-        <p className="section-label">WHAT I BUILD</p>
+      <div className="wrap">
         <h2
           style={{
-            fontFamily: "var(--font-heading)",
-            fontSize: "clamp(36px, 3.1vw, 44.8px)",
-            fontWeight: 400,
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(28px, 3vw, 40px)",
+            fontWeight: 700,
+            letterSpacing: "-0.025em",
             lineHeight: 1.15,
-            color: "var(--color-text-primary)",
-            marginBottom: "8px",
+            color: "var(--ink)",
+            marginBottom: "12px",
           }}
         >
-          Projects
+          Selected work
         </h2>
         <p
           style={{
             fontFamily: "var(--font-body)",
             fontSize: "16px",
-            color: "var(--color-text-muted)",
+            color: "var(--muted)",
             marginBottom: "64px",
+            maxWidth: "480px",
           }}
         >
-          A selection of production apps, all built with AI
+          Eight of forty-five. Each one live, each one in production.
         </p>
 
-        {/* 2x2 grid like original services */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project) => (
+        {/* Featured — detailed entries, NOT identical cards */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1px",
+            backgroundColor: "var(--border)",
+            borderRadius: "10px",
+            overflow: "hidden",
+            marginBottom: "48px",
+          }}
+        >
+          {featured.map((p) => (
             <a
-              key={project.title}
-              href={project.url}
+              key={p.title}
+              href={p.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block no-underline transition-all duration-200"
+              className="group no-underline transition-colors duration-200"
               style={{
-                backgroundColor: "var(--color-bg-white)",
-                border: "0.8px solid var(--color-border-card)",
-                borderRadius: "12px",
-                padding: "40px",
+                display: "block",
+                backgroundColor: "var(--bg)",
+                padding: "36px 32px",
               }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor =
+                  "oklch(0.985 0.004 80)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = "var(--bg)")
+              }
             >
-              {/* Icon */}
-              <div
-                className="mb-6 flex items-center justify-center"
-                style={{
-                  width: "48px",
-                  height: "48px",
-                  backgroundColor: "rgba(176, 125, 79, 0.08)",
-                  borderRadius: "8px",
-                  fontSize: "20px",
-                }}
-              >
-                {project.icon}
+              <div className="flex flex-col md:flex-row md:items-start md:gap-12">
+                {/* Left: title + one-liner */}
+                <div style={{ minWidth: "260px", marginBottom: "12px" }}>
+                  <h3
+                    className="group-hover:text-[var(--primary)] transition-colors duration-200"
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: "22px",
+                      fontWeight: 700,
+                      letterSpacing: "-0.01em",
+                      color: "var(--ink)",
+                      marginBottom: "4px",
+                    }}
+                  >
+                    {p.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                      color: "var(--primary)",
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    {p.oneLiner}
+                  </p>
+                </div>
+
+                {/* Right: detail + tags */}
+                <div style={{ flex: 1 }}>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: "14.5px",
+                      lineHeight: 1.65,
+                      color: "var(--muted)",
+                      marginBottom: "14px",
+                      maxWidth: "600px",
+                    }}
+                  >
+                    {p.detail}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {p.tags.map((t) => (
+                      <span
+                        key={t}
+                        style={{
+                          fontFamily: "var(--font-body)",
+                          fontSize: "12px",
+                          fontWeight: 500,
+                          color: "var(--muted)",
+                          backgroundColor: "var(--primary-soft)",
+                          padding: "3px 10px",
+                          borderRadius: "4px",
+                        }}
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
+            </a>
+          ))}
+        </div>
 
-              {/* Title */}
+        {/* Others — compact list, varied from the featured layout */}
+        <div
+          className="grid grid-cols-1 md:grid-cols-2"
+          style={{ gap: "1px", backgroundColor: "var(--border)", borderRadius: "10px", overflow: "hidden" }}
+        >
+          {others.map((p) => (
+            <a
+              key={p.title}
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group no-underline transition-colors duration-200"
+              style={{
+                display: "block",
+                backgroundColor: "var(--bg)",
+                padding: "28px 28px",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor =
+                  "oklch(0.985 0.004 80)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = "var(--bg)")
+              }
+            >
               <h3
-                className="group-hover:text-[var(--color-copper)] transition-colors duration-200"
+                className="group-hover:text-[var(--primary)] transition-colors duration-200"
                 style={{
-                  fontFamily: "var(--font-heading)",
-                  fontSize: "27.2px",
-                  fontWeight: 400,
-                  color: "var(--color-text-primary)",
-                  marginBottom: "16px",
+                  fontFamily: "var(--font-display)",
+                  fontSize: "17px",
+                  fontWeight: 700,
+                  letterSpacing: "-0.01em",
+                  color: "var(--ink)",
+                  marginBottom: "6px",
                 }}
               >
-                {project.title}
+                {p.title}
               </h3>
-
-              {/* Description */}
               <p
                 style={{
                   fontFamily: "var(--font-body)",
-                  fontSize: "15px",
-                  lineHeight: 1.7,
-                  color: "var(--color-text-muted)",
+                  fontSize: "13.5px",
+                  lineHeight: 1.6,
+                  color: "var(--muted)",
                 }}
               >
-                {project.description}
+                {p.desc}
               </p>
             </a>
           ))}
         </div>
 
-        {/* Link to full portfolio */}
-        <div className="text-center mt-12">
+        <div style={{ marginTop: "40px" }}>
           <a
             href="https://egertv.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 no-underline transition-opacity duration-200 hover:opacity-80"
+            className="no-underline transition-colors duration-200"
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: "13px",
-              fontWeight: 500,
-              letterSpacing: "1.3px",
-              textTransform: "uppercase",
-              color: "var(--color-copper)",
+              fontSize: "14px",
+              fontWeight: 600,
+              color: "var(--primary)",
             }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.color = "var(--primary-hover)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.color = "var(--primary)")
+            }
           >
-            VIEW ALL 25+ PROJECTS →
+            View all 45+ projects →
           </a>
         </div>
       </div>

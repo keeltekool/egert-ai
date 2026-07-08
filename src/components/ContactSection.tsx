@@ -1,128 +1,103 @@
+"use client";
+
 export function ContactSection() {
   return (
     <section
       id="contact"
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-bg-white)" }}
+      style={{
+        backgroundColor: "var(--bg)",
+        padding: "120px 0",
+      }}
     >
-      <div className="container-main">
-        <p className="section-label">GET IN TOUCH</p>
+      <div className="wrap">
         <h2
           style={{
-            fontFamily: "var(--font-heading)",
-            fontSize: "clamp(36px, 3.1vw, 44.8px)",
-            fontWeight: 400,
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(26px, 2.8vw, 36px)",
+            fontWeight: 700,
+            letterSpacing: "-0.025em",
             lineHeight: 1.15,
-            color: "var(--color-text-primary)",
-            marginBottom: "8px",
+            color: "var(--ink)",
+            marginBottom: "28px",
           }}
         >
-          Contact
+          Get in touch
         </h2>
-        <p
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "16px",
-            color: "var(--color-text-muted)",
-            marginBottom: "64px",
-          }}
-        >
-          Let&apos;s talk about your next project.
-        </p>
 
-        {/* Contact card */}
-        <div
-          className="max-w-[640px]"
-          style={{
-            backgroundColor: "var(--color-bg-white)",
-            border: "0.8px solid var(--color-border-card)",
-            borderRadius: "12px",
-            padding: "56px",
-          }}
-        >
-          <h3
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontSize: "27.2px",
-              fontWeight: 400,
-              color: "var(--color-text-primary)",
-              marginBottom: "48px",
-            }}
-          >
-            Contact info
-          </h3>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-start">
+          <div style={{ maxWidth: "480px" }}>
+            <p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "15.5px",
+                lineHeight: 1.7,
+                color: "var(--muted)",
+                marginBottom: "32px",
+              }}
+            >
+              Interested in how AI-augmented building works in practice?
+              Want to discuss a project, a collaboration, or just trade
+              notes on shipping with Claude Code? I&apos;m always up for it.
+            </p>
 
-          {/* Email */}
-          <div className="flex items-center gap-5" style={{ marginBottom: "32px" }}>
-            <div style={{ color: "var(--color-copper)", width: "24px", flexShrink: 0 }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              </svg>
-            </div>
-            <div>
-              <span style={{ fontFamily: "var(--font-body)", fontSize: "16px", color: "var(--color-text-muted)" }}>
-                Email:{" "}
-              </span>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "16px",
+              }}
+            >
               <a
                 href="mailto:egert@egertv.com"
-                className="no-underline hover:underline"
-                style={{ fontFamily: "var(--font-body)", fontSize: "16px", color: "var(--color-text-primary)" }}
+                className="no-underline transition-colors duration-200"
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "15px",
+                  fontWeight: 500,
+                  color: "var(--ink)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "var(--primary)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "var(--ink)")
+                }
               >
                 egert@egertv.com
               </a>
+              <span
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "14px",
+                  color: "var(--muted)",
+                }}
+              >
+                Tallinn, Estonia
+              </span>
             </div>
           </div>
 
-          {/* Location */}
-          <div className="flex items-center gap-5" style={{ marginBottom: "48px" }}>
-            <div style={{ color: "var(--color-copper)", width: "24px", flexShrink: 0 }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-            </div>
-            <span style={{ fontFamily: "var(--font-body)", fontSize: "16px", color: "var(--color-text-primary)" }}>
-              Tallinn, Estonia
-            </span>
-          </div>
-
-          {/* Divider */}
-          <div style={{ borderTop: "0.8px solid var(--color-border-card)", marginBottom: "48px" }} />
-
-          {/* CTA button */}
-          <a
-            href="mailto:egert@egertv.com"
-            className="block no-underline text-center transition-opacity duration-200 hover:opacity-90"
-            style={{
-              backgroundColor: "var(--color-copper)",
-              color: "#ffffff",
-              padding: "16px 32px",
-              fontSize: "13px",
-              fontWeight: 500,
-              fontFamily: "var(--font-body)",
-              letterSpacing: "1.3px",
-              textTransform: "uppercase",
-              borderRadius: "4px",
-              marginBottom: "32px",
-            }}
-          >
-            SEND EMAIL
-          </a>
-
-          {/* Social links */}
-          <div className="flex gap-4">
+          {/* Social links — minimal */}
+          <div className="flex gap-3">
             <a
               href="https://www.linkedin.com/in/egert-vainaste/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center no-underline transition-opacity duration-200 hover:opacity-70"
+              className="flex items-center justify-center no-underline transition-colors duration-200"
               style={{
-                width: "44px",
-                height: "44px",
-                borderRadius: "50%",
-                border: "0.8px solid var(--color-border-card)",
-                color: "var(--color-text-muted)",
+                width: "40px",
+                height: "40px",
+                borderRadius: "8px",
+                border: "1px solid var(--border)",
+                color: "var(--muted)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "var(--ink)";
+                e.currentTarget.style.color = "var(--ink)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "var(--border)";
+                e.currentTarget.style.color = "var(--muted)";
               }}
               aria-label="LinkedIn"
             >
@@ -134,13 +109,21 @@ export function ContactSection() {
               href="https://github.com/keeltekool"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center no-underline transition-opacity duration-200 hover:opacity-70"
+              className="flex items-center justify-center no-underline transition-colors duration-200"
               style={{
-                width: "44px",
-                height: "44px",
-                borderRadius: "50%",
-                border: "0.8px solid var(--color-border-card)",
-                color: "var(--color-text-muted)",
+                width: "40px",
+                height: "40px",
+                borderRadius: "8px",
+                border: "1px solid var(--border)",
+                color: "var(--muted)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "var(--ink)";
+                e.currentTarget.style.color = "var(--ink)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "var(--border)";
+                e.currentTarget.style.color = "var(--muted)";
               }}
               aria-label="GitHub"
             >

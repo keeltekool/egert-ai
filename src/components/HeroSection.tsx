@@ -38,10 +38,10 @@ export function HeroSection() {
             marginBottom: "48px",
           }}
         >
-          Product manager by trade. I use Claude Code to ship full-stack
-          software — barcode-scanning PWAs, multi-tenant SaaS platforms,
-          dual-layer NLP engines, autonomous scraping pipelines. Real
-          databases, real auth, real payments, real users.
+          Product manager who builds. I use AI to ship production web
+          apps — price trackers, booking systems, SaaS platforms, language
+          tools, data dashboards. Not mockups. Working products with
+          real users, real payments, and real infrastructure behind them.
         </p>
 
         <div className="flex flex-wrap gap-3">
@@ -97,7 +97,6 @@ export function HeroSection() {
           </a>
         </div>
 
-        {/* Proof line — not a metric grid, just a quiet fact */}
         <p
           style={{
             fontFamily: "var(--font-body)",
@@ -105,12 +104,8 @@ export function HeroSection() {
             fontWeight: 400,
             color: "var(--muted)",
             marginTop: "56px",
-            paddingTop: "24px",
-            borderTop: "1px solid var(--border-subtle)",
-            maxWidth: "560px",
           }}
         >
-          15+ live in production today · 20+ external services wired ·
           Tallinn, Estonia
         </p>
       </div>

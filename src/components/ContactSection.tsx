@@ -65,11 +65,11 @@ export function ContactSection() {
                 Email:{" "}
               </span>
               <a
-                href="mailto:egertv@gmail.com"
+                href="mailto:egert@egertv.com"
                 className="no-underline hover:underline"
                 style={{ fontFamily: "var(--font-body)", fontSize: "16px", color: "var(--color-text-primary)" }}
               >
-                egertv@gmail.com
+                egert@egertv.com
               </a>
             </div>
           </div>
@@ -92,7 +92,7 @@ export function ContactSection() {
 
           {/* CTA button */}
           <a
-            href="mailto:egertv@gmail.com"
+            href="mailto:egert@egertv.com"
             className="block no-underline text-center transition-opacity duration-200 hover:opacity-90"
             style={{
               backgroundColor: "var(--color-copper)",

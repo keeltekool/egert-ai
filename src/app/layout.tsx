@@ -18,7 +18,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Egert Väinaste | AI Builder & Product Manager",
   description:
-    "Product Manager and AI builder. 45+ production apps built with Claude Code in six months — from barcode-scanning PWAs and multi-tenant SaaS to NLP engines and data pipelines.",
+    "Product Manager and AI builder. 25+ projects built with Claude Code, from APIs and SaaS platforms to mobile apps and data tools.",
 };
 
 export default function RootLayout({

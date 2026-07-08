@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
-import { Hanken_Grotesk } from "next/font/google";
+import { Cormorant_Garamond, Outfit } from "next/font/google";
 import "./globals.css";
 
-const hanken = Hanken_Grotesk({
-  variable: "--font-hanken",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-heading",
   subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+});
+
+const outfit = Outfit({
+  variable: "--font-body",
+  subsets: ["latin", "latin-ext"],
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "Egert Väinaste — 45 Production Apps in Six Months",
+  title: "Egert Väinaste | AI Builder & Product Manager",
   description:
-    "Product manager turned prolific AI builder. 45+ production applications built with Claude Code in six months — barcode-scanning PWAs, multi-tenant SaaS, NLP engines, autonomous data pipelines.",
+    "Product Manager and AI builder. 25+ projects built with Claude Code, from APIs and SaaS platforms to mobile apps and data tools.",
 };
 
 export default function RootLayout({
@@ -20,7 +27,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${hanken.variable} antialiased`}>
+    <html
+      lang="en"
+      className={`${cormorant.variable} ${outfit.variable} antialiased`}
+    >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

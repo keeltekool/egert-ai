@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 
 const navLinks = [
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Stack", href: "#stack" },
-  { label: "Contact", href: "#contact" },
+  { label: "ABOUT", href: "#about" },
+  { label: "PROJECTS", href: "#projects" },
+  { label: "SERVICES", href: "#services" },
+  { label: "CONTACT", href: "#contact" },
 ];
 
 export function Header() {
@@ -22,27 +22,25 @@ export function Header() {
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        backgroundColor: scrolled ? "oklch(1 0 0 / 0.92)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid var(--border-subtle)" : "none",
+        backgroundColor: scrolled
+          ? "rgba(246, 244, 239, 0.95)"
+          : "rgba(246, 244, 239, 0.92)",
+        backdropFilter: scrolled ? "blur(8px)" : "none",
+        borderBottom: scrolled ? "0.8px solid #e5e0d8" : "none",
       }}
     >
-      <div className="wrap flex items-center justify-between" style={{ height: "64px" }}>
+      <div className="container-main flex items-center justify-between h-[72px]">
+        {/* Logo */}
         <a
           href="#"
-          className="no-underline"
-          style={{
-            fontFamily: "var(--font-display)",
-            fontWeight: 700,
-            fontSize: "15px",
-            letterSpacing: "0.04em",
-            color: "var(--ink)",
-          }}
+          className="flex items-baseline gap-1 no-underline"
+          style={{ fontFamily: "var(--font-body)", fontWeight: 600, fontSize: "18px", letterSpacing: "2px", color: "var(--color-text-primary)" }}
         >
-          Egert Väinaste
+          EGERT<span style={{ color: "var(--color-copper)", fontWeight: 400 }}> AI</span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-7">
+        {/* Nav */}
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -50,16 +48,14 @@ export function Header() {
               className="no-underline transition-colors duration-200"
               style={{
                 fontFamily: "var(--font-body)",
-                fontSize: "14px",
+                fontSize: "13px",
                 fontWeight: 400,
-                color: "var(--muted)",
+                letterSpacing: "1.3px",
+                textTransform: "uppercase",
+                color: "var(--color-text-muted)",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "var(--ink)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "var(--muted)")
-              }
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text-primary)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
             >
               {link.label}
             </a>

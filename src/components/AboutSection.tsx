@@ -2,101 +2,120 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      style={{
-        backgroundColor: "var(--bg)",
-        padding: "120px 0",
-      }}
+      className="section-padding"
+      style={{ backgroundColor: "var(--color-bg-cream)" }}
     >
-      <div className="wrap">
-        <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12 md:gap-16 items-start">
-          {/* Photo — constrained, not hero-sized */}
+      <div className="container-main">
+        {/* Section header */}
+        <p className="section-label">INTRODUCTION</p>
+        <h2
+          style={{
+            fontFamily: "var(--font-heading)",
+            fontSize: "clamp(36px, 3.1vw, 44.8px)",
+            fontWeight: 400,
+            lineHeight: 1.15,
+            color: "var(--color-text-primary)",
+            marginBottom: "8px",
+          }}
+        >
+          About
+        </h2>
+        <p
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "16px",
+            color: "var(--color-text-muted)",
+            marginBottom: "64px",
+          }}
+        >
+          Building with AI, shipping fast
+        </p>
+
+        {/* Content: two-column */}
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-16 items-start">
+          {/* Photo */}
           <img
             src="/images/Egert V.jpg"
             alt="Egert Väinaste"
-            className="w-full"
+            className="w-full max-w-[400px]"
             style={{
-              borderRadius: "8px",
+              borderRadius: "12px",
               objectFit: "cover",
               aspectRatio: "3 / 4",
-              maxWidth: "280px",
             }}
           />
 
-          {/* Narrative */}
+          {/* Bio */}
           <div>
-            <h2
+            <h3
               style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "clamp(26px, 2.8vw, 36px)",
-                fontWeight: 700,
-                letterSpacing: "-0.025em",
-                lineHeight: 1.15,
-                color: "var(--ink)",
-                marginBottom: "28px",
+                fontFamily: "var(--font-heading)",
+                fontSize: "27.2px",
+                fontWeight: 400,
+                color: "var(--color-text-primary)",
+                marginBottom: "24px",
+                lineHeight: 1.3,
               }}
             >
-              A product manager
-              <br />
-              who learned to ship.
-            </h2>
+              Hi! I&apos;m Egert Väinaste – Product Manager and AI builder
+            </h3>
 
-            <div
+            <p
               style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "18px",
-                maxWidth: "580px",
+                fontFamily: "var(--font-body)",
+                fontSize: "16px",
+                lineHeight: 1.7,
+                color: "var(--color-text-muted)",
+                marginBottom: "20px",
               }}
             >
-              <p
-                style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: "15.5px",
-                  lineHeight: 1.7,
-                  color: "var(--muted)",
-                }}
-              >
-                For years I wrote specs and handed them to engineering teams.
-                Then Claude Code arrived and I could build the thing myself —
-                not prototypes, not demos, but production systems with real
-                databases, real auth, real payment flows, and real users.
-              </p>
+              By day, I lead API product development at SK ID Solutions – building
+              Europe&apos;s next-generation e-sealing infrastructure based on the CSC
+              standard. By night (and weekends), I ship AI-powered products at an
+              unreasonable pace.
+            </p>
 
-              <p
-                style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: "15.5px",
-                  lineHeight: 1.7,
-                  color: "var(--muted)",
-                }}
-              >
-                In six months I shipped 45 applications. A barcode-scanning
-                grocery price tracker that matches products across three
-                retail chains with a deterministic zero-AI matcher. An
-                Estonian &quot;Grammarly&quot; where every LLM suggestion is
-                re-validated by a rule-based NLP engine. A multi-tenant DJ
-                request platform with Stripe subscriptions and YouTube API
-                writes. A production booking system for a real tennis club —
-                deployed and handed to the client.
-              </p>
+            <p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "16px",
+                lineHeight: 1.7,
+                color: "var(--color-text-muted)",
+                marginBottom: "20px",
+              }}
+            >
+              In the past year, I&apos;ve built 25+ production applications using Claude
+              Code as my development partner – from OAuth 2.0 API platforms and
+              multi-tenant SaaS tools to mobile apps, data scrapers, and AI-powered
+              job application systems.
+            </p>
 
-              <p
-                style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: "15.5px",
-                  lineHeight: 1.7,
-                  color: "var(--muted)",
-                }}
-              >
-                These aren&apos;t weekend toys. They have Neon databases,
-                Clerk auth, Stripe payments, Cloudflare R2 storage, GitHub
-                Actions crons, push notifications, Telegram bots, and
-                Playwright test suites. I wire the backends, connect the
-                APIs, set up the pipelines, and deploy to Vercel — all
-                through Claude Code, all at a pace that would take a
-                traditional team months.
-              </p>
-            </div>
+            <p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "16px",
+                lineHeight: 1.7,
+                color: "var(--color-text-muted)",
+                marginBottom: "20px",
+              }}
+            >
+              My stack: Next.js, React, TypeScript, Tailwind CSS, Neon PostgreSQL,
+              Clerk, Stripe, Vercel – with Claude AI powering the intelligence layer.
+              Every project goes from zero to deployed in days, not months.
+            </p>
+
+            <p
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: "18px",
+                fontStyle: "italic",
+                fontWeight: 300,
+                color: "var(--color-text-muted)",
+                marginTop: "32px",
+              }}
+            >
+              I have the vision. And the tools to make it real.
+            </p>
           </div>
         </div>
       </div>

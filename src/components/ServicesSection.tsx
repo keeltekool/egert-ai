@@ -1,134 +1,116 @@
-const services = [
+const layers = [
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" />
-        <path d="m8 21 4-4 4 4" />
-      </svg>
-    ),
-    title: "AI-Powered App Development",
-    description:
-      "Full-stack web applications built with Next.js, React, and AI – from concept to deployed product. Multi-tenant SaaS, APIs, dashboards, mobile-first PWAs.",
+    label: "Frontend",
+    items: "Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · PWAs · Service Workers · MapLibre",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-        <path d="M2 17l10 5 10-5" />
-        <path d="M2 12l10 5 10-5" />
-      </svg>
-    ),
-    title: "API Design & Development",
-    description:
-      "Production-grade REST APIs with OAuth 2.0, OpenAPI specs, rate limiting, SDKs, and developer portals. Following CSC and industry standards.",
+    label: "Backend",
+    items: "Neon PostgreSQL · Drizzle ORM · Vercel Serverless · FastAPI · GitHub Actions Crons",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 3v18h18" />
-        <path d="m7 17 4-8 4 4 4-10" />
-      </svg>
-    ),
-    title: "Data Integration & Scraping",
-    description:
-      "Connect any data source – public APIs, web scrapers, government portals. Automated pipelines with daily syncs, deduplication, and structured storage.",
+    label: "Auth & Payments",
+    items: "Clerk · Stripe Subscriptions · OAuth 2.0 · SCAL2 PIN · Bearer Tokens",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 6v6l4 2" />
-      </svg>
-    ),
-    title: "AI Automation & Workflows",
-    description:
-      "Autonomous AI loops, scheduled tasks, and intelligent workflows. From email triage to content generation – systems that work while you sleep.",
+    label: "AI",
+    items: "Claude API (Opus / Haiku) · estnltk MCP · Deterministic NLP Validation · AI Scoring Pipelines",
+  },
+  {
+    label: "Data",
+    items: "Cheerio · Cloudflare Browser Rendering · RSS Parsers · Barcode APIs · Elasticsearch · OSRM",
+  },
+  {
+    label: "Infrastructure",
+    items: "Cloudflare R2 · Resend Email · Web Push VAPID · Telegram Bots · iOS Shortcuts · Sentry",
   },
 ];
 
 export function ServicesSection() {
   return (
     <section
-      id="services"
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-bg-cream)" }}
+      id="stack"
+      style={{
+        backgroundColor: "var(--ink)",
+        padding: "100px 0",
+      }}
     >
-      <div className="container-main">
-        <p className="section-label">WHAT I OFFER</p>
+      <div className="wrap">
         <h2
           style={{
-            fontFamily: "var(--font-heading)",
-            fontSize: "clamp(36px, 3.1vw, 44.8px)",
-            fontWeight: 400,
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(26px, 2.8vw, 36px)",
+            fontWeight: 700,
+            letterSpacing: "-0.025em",
             lineHeight: 1.15,
-            color: "var(--color-text-primary)",
-            marginBottom: "8px",
+            color: "oklch(1 0 0)",
+            marginBottom: "12px",
           }}
         >
-          Services
+          What&apos;s under the hood
         </h2>
         <p
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: "16px",
-            color: "var(--color-text-muted)",
-            marginBottom: "64px",
+            fontSize: "15px",
+            lineHeight: 1.6,
+            color: "oklch(1 0 0 / 0.5)",
+            marginBottom: "56px",
+            maxWidth: "440px",
           }}
         >
-          From prototype to production – practical solutions with AI
+          Every item here is in production code, not a list of aspirations.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {services.map((service) => (
+        {/* Stack as a structured table — NOT identical cards */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          {layers.map((layer, i) => (
             <div
-              key={service.title}
-              className="transition-all duration-200"
+              key={layer.label}
+              className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-0"
               style={{
-                backgroundColor: "var(--color-bg-white)",
-                border: "0.8px solid var(--color-border-card)",
-                borderRadius: "12px",
-                padding: "40px",
+                padding: "20px 0",
+                borderTop:
+                  i === 0
+                    ? "1px solid oklch(1 0 0 / 0.12)"
+                    : "1px solid oklch(1 0 0 / 0.08)",
               }}
             >
-              {/* Icon */}
-              <div
-                className="mb-6 flex items-center justify-center"
+              <span
                 style={{
-                  width: "48px",
-                  height: "48px",
-                  backgroundColor: "rgba(176, 125, 79, 0.08)",
-                  borderRadius: "8px",
-                  color: "var(--color-copper)",
+                  fontFamily: "var(--font-display)",
+                  fontSize: "13px",
+                  fontWeight: 600,
+                  letterSpacing: "0.02em",
+                  color: "var(--primary)",
+                  minWidth: "140px",
+                  flexShrink: 0,
                 }}
               >
-                {service.icon}
-              </div>
-
-              <h3
-                style={{
-                  fontFamily: "var(--font-heading)",
-                  fontSize: "27.2px",
-                  fontWeight: 400,
-                  fontStyle: "italic",
-                  color: "var(--color-text-primary)",
-                  marginBottom: "16px",
-                }}
-              >
-                {service.title}
-              </h3>
-
-              <p
+                {layer.label}
+              </span>
+              <span
                 style={{
                   fontFamily: "var(--font-body)",
-                  fontSize: "15px",
+                  fontSize: "14.5px",
+                  fontWeight: 300,
                   lineHeight: 1.7,
-                  color: "var(--color-text-muted)",
+                  color: "oklch(1 0 0 / 0.65)",
                 }}
               >
-                {service.description}
-              </p>
+                {layer.items}
+              </span>
             </div>
           ))}
+          <div
+            style={{
+              borderTop: "1px solid oklch(1 0 0 / 0.08)",
+            }}
+          />
         </div>
       </div>
     </section>

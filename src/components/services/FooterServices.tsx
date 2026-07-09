@@ -1,6 +1,9 @@
 "use client";
 
-export function Footer() {
+import { useLang } from "./i18n";
+
+export function FooterServices() {
+  const { t } = useLang();
   return (
     <footer
       style={{
@@ -16,7 +19,7 @@ export function Footer() {
             color: "oklch(1 0 0 / 0.4)",
           }}
         >
-          © 2026 Egert Väinaste · Built with Claude Code
+          {t.footer}
         </p>
         <div className="flex gap-4">
           <a

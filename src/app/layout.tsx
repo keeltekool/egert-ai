@@ -9,9 +9,9 @@ const hanken = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Egert Väinaste — 45 Production Apps in Six Months",
+  title: "Egert Väinaste – AI-native tooteehitaja Eesti ettevõtetele",
   description:
-    "Product manager turned prolific AI builder. 45+ production applications built with Claude Code in six months — barcode-scanning PWAs, multi-tenant SaaS, NLP engines, autonomous data pipelines.",
+    "Konsultatsioon, koolitus või valmis ehitatud tarkvara – vastavalt sellele, mida vaja on. AI-native tooteehitaja, kes on kuue kuuga viinud päriskasutusse 45+ rakendust.",
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${hanken.variable} antialiased`}>
+    <html lang="et" className={`${hanken.variable} antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

@@ -1,23 +1,33 @@
-import { Header } from "@/components/Header";
-import { HeroSection } from "@/components/HeroSection";
-import { AboutSection } from "@/components/AboutSection";
-import { ProjectsSection } from "@/components/ProjectsSection";
-import { ServicesSection } from "@/components/ServicesSection";
-import { ContactSection } from "@/components/ContactSection";
-import { Footer } from "@/components/Footer";
+import type { Metadata } from "next";
+import { LanguageProvider } from "@/components/services/i18n";
+import { HeaderServices } from "@/components/services/HeaderServices";
+import { HeroServices } from "@/components/services/HeroServices";
+import { WhyMe } from "@/components/services/WhyMe";
+import { OfferingSection } from "@/components/services/OfferingSection";
+import { ProofSection } from "@/components/services/ProofSection";
+import { StackServices } from "@/components/services/StackServices";
+import { ContactServices } from "@/components/services/ContactServices";
+import { FooterServices } from "@/components/services/FooterServices";
+
+export const metadata: Metadata = {
+  title: "Egert Väinaste – AI-native tooteehitaja Eesti ettevõtetele",
+  description:
+    "Konsultatsioon, koolitus või valmis ehitatud tarkvara – vastavalt sellele, mida vaja on. AI-native tooteehitaja, kes on kuue kuuga viinud päriskasutusse 45+ rakendust: kliendiportaalid, juhtpaneelid, broneerimissüsteemid, sisetööriistad ja SaaS.",
+};
 
 export default function Home() {
   return (
-    <>
-      <Header />
+    <LanguageProvider>
+      <HeaderServices />
       <main>
-        <HeroSection />
-        <AboutSection />
-        <ProjectsSection />
-        <ServicesSection />
-        <ContactSection />
+        <HeroServices />
+        <WhyMe />
+        <OfferingSection />
+        <ProofSection />
+        <StackServices />
+        <ContactServices />
       </main>
-      <Footer />
-    </>
+      <FooterServices />
+    </LanguageProvider>
   );
 }

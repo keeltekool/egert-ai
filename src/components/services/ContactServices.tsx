@@ -1,12 +1,15 @@
 "use client";
 
-export function ContactSection() {
+import { useLang } from "./i18n";
+
+export function ContactServices() {
+  const { t } = useLang();
   return (
     <section
       id="contact"
       style={{
         backgroundColor: "var(--bg)",
-        padding: "120px 0",
+        padding: "76px 0",
       }}
     >
       <div className="wrap">
@@ -21,11 +24,11 @@ export function ContactSection() {
             marginBottom: "28px",
           }}
         >
-          Get in touch
+          {t.contact.heading}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-start">
-          <div style={{ maxWidth: "480px" }}>
+          <div style={{ maxWidth: "500px" }}>
             <p
               style={{
                 fontFamily: "var(--font-body)",
@@ -35,9 +38,7 @@ export function ContactSection() {
                 marginBottom: "32px",
               }}
             >
-              Interested in how AI-augmented building works in practice?
-              Want to discuss a project, a collaboration, or just trade
-              notes on shipping with Claude Code? I&apos;m always up for it.
+              {t.contact.body}
             </p>
 
             <div
@@ -48,22 +49,29 @@ export function ContactSection() {
               }}
             >
               <a
-                href="mailto:egertv@gmail.com"
-                className="no-underline transition-colors duration-200"
+                href="mailto:egertv@gmail.com?subject=Let%27s%20talk%20about%20a%20project"
+                className="no-underline transition-all duration-200"
                 style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  alignSelf: "flex-start",
+                  backgroundColor: "var(--primary)",
+                  color: "#fff",
+                  padding: "12px 28px",
+                  fontSize: "14px",
+                  fontWeight: 600,
                   fontFamily: "var(--font-body)",
-                  fontSize: "15px",
-                  fontWeight: 500,
-                  color: "var(--ink)",
+                  borderRadius: "6px",
                 }}
                 onMouseEnter={(e) =>
-                  (e.currentTarget.style.color = "var(--primary)")
+                  (e.currentTarget.style.backgroundColor =
+                    "var(--primary-hover)")
                 }
                 onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = "var(--ink)")
+                  (e.currentTarget.style.backgroundColor = "var(--primary)")
                 }
               >
-                egertv@gmail.com
+                {t.contact.cta}
               </a>
               <span
                 style={{
@@ -77,7 +85,6 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Social links — minimal */}
           <div className="flex gap-3">
             <a
               href="https://www.linkedin.com/in/egert-vainaste/"

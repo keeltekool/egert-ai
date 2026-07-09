@@ -1,3 +1,8 @@
+"use client";
+
+import { useLang } from "./i18n";
+
+// Tool names are not translated — identical in both languages.
 const layers = [
   {
     label: "Frontend",
@@ -25,7 +30,8 @@ const layers = [
   },
 ];
 
-export function ServicesSection() {
+export function StackServices() {
+  const { t } = useLang();
   return (
     <section
       id="stack"
@@ -46,7 +52,7 @@ export function ServicesSection() {
             marginBottom: "12px",
           }}
         >
-          What&apos;s under the hood
+          {t.stack.heading}
         </h2>
         <p
           style={{
@@ -58,16 +64,10 @@ export function ServicesSection() {
             maxWidth: "440px",
           }}
         >
-          Every item here is in production code, not a list of aspirations.
+          {t.stack.intro}
         </p>
 
-        {/* Stack as a structured table — NOT identical cards */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
+        <div style={{ display: "flex", flexDirection: "column" }}>
           {layers.map((layer, i) => (
             <div
               key={layer.label}
@@ -106,11 +106,7 @@ export function ServicesSection() {
               </span>
             </div>
           ))}
-          <div
-            style={{
-              borderTop: "1px solid oklch(1 0 0 / 0.08)",
-            }}
-          />
+          <div style={{ borderTop: "1px solid oklch(1 0 0 / 0.08)" }} />
         </div>
       </div>
     </section>

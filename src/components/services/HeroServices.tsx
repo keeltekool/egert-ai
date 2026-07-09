@@ -1,30 +1,47 @@
 "use client";
 
-export function HeroSection() {
+import { useLang } from "./i18n";
+
+export function HeroServices() {
+  const { t } = useLang();
   return (
     <section
       style={{
         backgroundColor: "var(--bg)",
-        paddingTop: "140px",
-        paddingBottom: "72px",
+        paddingTop: "116px",
+        paddingBottom: "48px",
       }}
     >
       <div className="wrap">
+        <p
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "13px",
+            fontWeight: 600,
+            letterSpacing: "0.04em",
+            textTransform: "uppercase",
+            color: "var(--primary)",
+            marginBottom: "22px",
+          }}
+        >
+          {t.hero.eyebrow}
+        </p>
+
         <h1
           style={{
             fontFamily: "var(--font-display)",
-            fontSize: "clamp(38px, 5.5vw, 72px)",
+            fontSize: "clamp(36px, 5.2vw, 66px)",
             fontWeight: 800,
-            lineHeight: 1.05,
+            lineHeight: 1.06,
             letterSpacing: "-0.035em",
             color: "var(--ink)",
-            maxWidth: "900px",
-            marginBottom: "36px",
+            maxWidth: "920px",
+            marginBottom: "34px",
           }}
         >
-          45 production apps.
+          {t.hero.headlineA}
           <br />
-          <span style={{ color: "var(--primary)" }}>Six months.</span>
+          <span style={{ color: "var(--primary)" }}>{t.hero.headlineB}</span>
         </h1>
 
         <p
@@ -35,18 +52,15 @@ export function HeroSection() {
             lineHeight: 1.65,
             color: "var(--muted)",
             maxWidth: "560px",
-            marginBottom: "48px",
+            marginBottom: "40px",
           }}
         >
-          Product manager who builds. I use AI to ship production web
-          apps — price trackers, booking systems, SaaS platforms, language
-          tools, data dashboards. Not mockups. Working products with
-          real users, real payments, and real infrastructure behind them.
+          {t.hero.body}
         </p>
 
         <div className="flex flex-wrap gap-3">
           <a
-            href="#work"
+            href="#contact"
             className="no-underline transition-all duration-200"
             style={{
               display: "inline-flex",
@@ -60,19 +74,16 @@ export function HeroSection() {
               borderRadius: "6px",
             }}
             onMouseEnter={(e) =>
-              (e.currentTarget.style.backgroundColor =
-                "var(--primary-hover)")
+              (e.currentTarget.style.backgroundColor = "var(--primary-hover)")
             }
             onMouseLeave={(e) =>
               (e.currentTarget.style.backgroundColor = "var(--primary)")
             }
           >
-            See the work
+            {t.hero.ctaPrimary}
           </a>
           <a
-            href="https://egertv.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#work"
             className="no-underline transition-all duration-200"
             style={{
               display: "inline-flex",
@@ -93,21 +104,9 @@ export function HeroSection() {
               (e.currentTarget.style.borderColor = "var(--border)")
             }
           >
-            Full portfolio →
+            {t.hero.ctaSecondary}
           </a>
         </div>
-
-        <p
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "13px",
-            fontWeight: 400,
-            color: "var(--muted)",
-            marginTop: "56px",
-          }}
-        >
-          Tallinn, Estonia
-        </p>
       </div>
     </section>
   );
